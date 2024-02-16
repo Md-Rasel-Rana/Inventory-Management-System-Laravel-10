@@ -47,7 +47,6 @@
                                 <p class="text-bold text-xs my-1 text-dark"> VAT(5%): <i class="bi bi-currency-dollar"></i>  <span id="vat"></span></p>
                                 <p class="text-bold text-xs my-1 text-dark"> Discount: <i class="bi bi-currency-dollar"></i>  <span id="discount"></span></p>
                             </div>
-
                         </div>
                     </div>
             </div>
@@ -62,24 +61,22 @@
 
 <script>
 
-
     async function InvoiceDetails(cus_id,inv_id) {
-
+    
         showLoader()
         let res=await axios.post("/invoice-details",{cus_id:cus_id,inv_id:inv_id})
         hideLoader();
-
-        document.getElementById('CName').innerText=res.data['customer']['name']
-        document.getElementById('CId').innerText=res.data['customer']['user_id']
-        document.getElementById('CEmail').innerText=res.data['customer']['email']
-        document.getElementById('total').innerText=res.data['invoice']['total']
-        document.getElementById('payable').innerText=res.data['invoice']['payable']
-        document.getElementById('vat').innerText=res.data['invoice']['vat']
-        document.getElementById('discount').innerText=res.data['invoice']['discount']
+        console.log(res);
+        document.getElementById('CName').innerText = res.data['customer']['name']
+        document.getElementById('CId').innerText= res.data['customer']['user_id']
+        document.getElementById('CEmail').innerText= res.data['customer']['email']
+        document.getElementById('total').innerText= res.data['invoice']['total']
+        document.getElementById('payable').innerText= res.data['invoice']['payable']
+        document.getElementById('vat').innerText= res.data['invoice']['vat']
+        document.getElementById('discount').innerText= res.data['invoice']['discount']
 
 
         let invoiceList=$('#invoiceList');
-
         invoiceList.empty();
 
         res.data['product'].forEach(function (item,index) {

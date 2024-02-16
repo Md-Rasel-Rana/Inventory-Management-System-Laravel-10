@@ -82,7 +82,6 @@
                         </tr>
                         </thead>
                         <tbody  class="w-100" id="customerList">
-
                         </tbody>
                     </table>
                 </div>
@@ -98,7 +97,7 @@
         <div class="modal-dialog modal-md modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h6 class="modal-title" id="exampleModalLabel">Add Product</h6>
+                    <h6 class="modal-title" id="exampleModalLabel"> Add Product </h6>
                 </div>
                 <div class="modal-body">
                     <form id="add-form">
@@ -138,12 +137,12 @@
         })()
 
 
-        let InvoiceItemList=[];
+        let InvoiceItemList = [];
 
 
         function ShowInvoiceItem() {
 
-            let invoiceList=$('#invoiceList');
+            let invoiceList =$('#invoiceList');
 
             invoiceList.empty();
 
@@ -183,12 +182,12 @@
             let Discount=0;
             let discountPercentage=(parseFloat(document.getElementById('discountP').value));
 
-            InvoiceItemList.forEach((item,index)=>{
+           InvoiceItemList.forEach((item,index)=>{
                 Total=Total+parseFloat(item['sale_price'])
             })
-
+           
              if(discountPercentage===0){
-                 Vat= ((Total*5)/100).toFixed(2);
+                 Vat = ((Total*5)/100).toFixed(2);
              }
              else {
                  Discount=((Total*discountPercentage)/100).toFixed(2);
@@ -225,16 +224,14 @@
                errorToast("Product Quantity Required");
            }
            else{
-               let item={product_name:PName,product_id:PId,qty:PQty,sale_price:PTotalPrice};
+               let item = {product_name:PName,product_id:PId,qty:PQty,sale_price:PTotalPrice};
+               //console.log(item);
                InvoiceItemList.push(item);
-               console.log(InvoiceItemList);
+              // console.log(InvoiceItemList);
                $('#create-modal').modal('hide')
                ShowInvoiceItem();
            }
         }
-
-
-
 
         function addModal(id,name,price) {
             document.getElementById('PId').value=id
@@ -261,11 +258,9 @@
 
 
             $('.addCustomer').on('click', async function () {
-
                 let CName= $(this).data('name');
                 let CEmail= $(this).data('email');
                 let CId= $(this).data('id');
-
                 $("#CName").text(CName)
                 $("#CEmail").text(CEmail)
                 $("#CId").text(CId)
@@ -282,7 +277,8 @@
 
 
         async function ProductList(){
-            let res=await axios.get("/list-product");
+            let res = await axios.get("/list-product");
+            //console.log(res.data);
             let productList=$("#productList");
             let productTable=$("#productTable");
             productTable.DataTable().destroy();
@@ -315,13 +311,12 @@
 
 
 
-      async  function createInvoice() {
+      async function createInvoice(){
             let total=document.getElementById('total').innerText;
             let discount=document.getElementById('discount').innerText
             let vat=document.getElementById('vat').innerText
             let payable=document.getElementById('payable').innerText
             let CId=document.getElementById('CId').innerText;
-
 
             let Data={
                 "total":total,

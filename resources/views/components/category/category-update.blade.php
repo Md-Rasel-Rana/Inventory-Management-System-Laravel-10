@@ -37,7 +37,7 @@
         document.getElementById('categoryNameUpdate').value=res.data['name'];
     }
 
-    async function Update() {
+    async function Update(){
 
         let categoryName = document.getElementById('categoryNameUpdate').value;
         let updateID = document.getElementById('updateID').value;

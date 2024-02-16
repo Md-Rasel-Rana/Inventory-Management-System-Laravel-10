@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class=" container-fluid " >
     <div class="row">
     <div class="col-md-12 col-sm-12 col-lg-12">
         <div class="card px-5 py-5">
@@ -7,7 +7,7 @@
                     <h4>Customer</h4>
                 </div>
                 <div class="align-items-center col">
-                    <button data-bs-toggle="modal" data-bs-target="#create-modal" class="float-end btn m-0 bg-gradient-primary">Create</button>
+                    <button data-bs-toggle="modal" data-bs-target="#create-modal" class="float-end btn  m-0 bg-gradient-primary">Create Customer</button>
                 </div>
             </div>
             <hr class="bg-dark "/>

@@ -78,7 +78,7 @@ class ProductController extends Controller
         $user_id=$request->header('id');
         $product_id=$request->input('id');
 
-        if ($request->hasFile('img')) {
+        if ($request->hasFile('img')){
 
             // Upload New File
             $img=$request->file('img');

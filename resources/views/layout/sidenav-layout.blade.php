@@ -4,22 +4,17 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <title></title>
-
     <link rel="icon" type="image/x-icon" href="{{asset('/favicon.ico')}}" />
     <link href="{{asset('css/bootstrap.css')}}" rel="stylesheet" />
     <link href="{{asset('css/animate.min.css')}}" rel="stylesheet" />
     <link href="{{asset('css/fontawesome.css')}}" rel="stylesheet" />
     <link href="{{asset('css/style.css')}}" rel="stylesheet" />
     <link href="{{asset('css/toastify.min.css')}}" rel="stylesheet" />
-
-
     <link href="{{asset('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css')}}" rel="stylesheet" />
 
     <link href="{{asset('css/jquery.dataTables.min.css')}}" rel="stylesheet" />
     <script src="{{asset('js/jquery-3.7.0.min.js')}}"></script>
     <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
-
-
     <script src="{{asset('js/toastify-js.js')}}"></script>
     <script src="{{asset('js/axios.min.js')}}"></script>
     <script src="{{asset('js/config.js')}}"></script>
@@ -36,7 +31,7 @@
     <div class="Line-Progress">
         <div class="indeterminate"></div>
     </div>
-</div>
+</div> 
 
 <nav class="navbar fixed-top px-0 shadow-sm bg-white">
     <div class="container-fluid">
@@ -118,7 +113,7 @@
 
 
 <script>
-    function MenuBarClickHandler() {
+    function MenuBarClickHandler(){
         let sideNav = document.getElementById('sideNavRef');
         let content = document.getElementById('contentRef');
         if (sideNav.classList.contains("side-nav-open")) {

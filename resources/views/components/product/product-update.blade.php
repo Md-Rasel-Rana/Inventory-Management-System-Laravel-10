@@ -87,12 +87,12 @@
 
     async function update() {
 
-        let productCategoryUpdate=document.getElementById('productCategoryUpdate').value;
+        let productCategoryUpdate = document.getElementById('productCategoryUpdate').value;
         let productNameUpdate = document.getElementById('productNameUpdate').value;
         let productPriceUpdate = document.getElementById('productPriceUpdate').value;
         let productUnitUpdate = document.getElementById('productUnitUpdate').value;
-        let updateID=document.getElementById('updateID').value;
-        let filePath=document.getElementById('filePath').value;
+        let updateID = document.getElementById('updateID').value;
+        let filePath = document.getElementById('filePath').value;
         let productImgUpdate = document.getElementById('productImgUpdate').files[0];
 
 

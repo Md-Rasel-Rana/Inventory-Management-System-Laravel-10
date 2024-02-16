@@ -70,8 +70,8 @@ async function getList() {
     })
 
     $('.deleteBtn').on('click',function () {
-        let id= $(this).data('id');
-        let path= $(this).data('path');
+        let id = $(this).data('id');
+        let path = $(this).data('path');
 
         $("#delete-modal").modal('show');
         $("#deleteID").val(id);

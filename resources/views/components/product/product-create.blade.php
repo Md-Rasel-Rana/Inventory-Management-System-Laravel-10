@@ -27,7 +27,7 @@
                                 <br/>
                                 <img class="w-15" id="newImg" src="{{asset('images/default.jpg')}}"/>
                                 <br/>
-
+                                
                                 <label class="form-label">Image</label>
                                 <input oninput="newImg.src=window.URL.createObjectURL(this.files[0])" type="file" class="form-control" id="productImg">
 
@@ -43,13 +43,11 @@
             </div>
     </div>
 </div>
-
-
-<script>
+git <script>
 
 
 
-    FillCategoryDropDown();
+         FillCategoryDropDown();
 
     async function FillCategoryDropDown(){
         let res = await axios.get("/list-category")
@@ -61,7 +59,6 @@
 
 
     async function Save() {
-
         let productCategory=document.getElementById('productCategory').value;
         let productName = document.getElementById('productName').value;
         let productPrice = document.getElementById('productPrice').value;

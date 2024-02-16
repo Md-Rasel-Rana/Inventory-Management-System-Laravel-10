@@ -10,7 +10,7 @@ class JWTToken
 {
 
     public static function CreateToken($userEmail,$userID):string{
-        $key =env('JWT_KEY');
+        $key = env('JWT_KEY');
         $payload=[
             'iss'=>'laravel-token',
             'iat'=>time(),
@@ -43,8 +43,8 @@ class JWTToken
                 return 'unauthorized';
             }
             else{
-                $key =env('JWT_KEY');
-                $decode=JWT::decode($token,new Key($key,'HS256'));
+                $key = env('JWT_KEY');
+                $decode = JWT::decode($token,new Key($key,'HS256'));
                 return $decode;
             }
         }
@@ -52,5 +52,6 @@ class JWTToken
             return 'unauthorized';
         }
     }
+    
 
 }

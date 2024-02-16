@@ -6,7 +6,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="save-form">
-                    <div class="container">
+                    <div class="container mx-auto">
                         <div class="row">
                             <div class="col-12 p-1">
                                 <label class="form-label">Category Name *</label>

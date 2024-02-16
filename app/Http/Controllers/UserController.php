@@ -53,6 +53,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'failed',
                 'message' => 'User Registration Failed'
+                
             ],200);
 
         }
@@ -69,6 +70,7 @@ class UserController extends Controller
            return response()->json([
                'status' => 'success',
                'message' => 'User Login Successful',
+               'token' => $token
            ],200)->cookie('token',$token,time()+60*24*30);
        }
        else{
@@ -121,6 +123,7 @@ class UserController extends Controller
             return response()->json([
                 'status' => 'success',
                 'message' => 'OTP Verification Successful',
+                'token' => $token
             ],200)->cookie('token',$token,60*24*30);
 
         }
