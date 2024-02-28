@@ -60,7 +60,7 @@ class UserController extends Controller
     }
 
     function UserLogin(Request $request){
-       $count=User::where('email','=',$request->input('email'))
+       $count = User::where('email','=',$request->input('email'))
             ->where('password','=',$request->input('password'))
             ->select('id')->first();
 
@@ -84,7 +84,6 @@ class UserController extends Controller
     }
 
     function SendOTPCode(Request $request){
-
         $email=$request->input('email');
         $otp=rand(1000,9999);
         $count=User::where('email','=',$email)->count();
@@ -137,8 +136,8 @@ class UserController extends Controller
 
     function ResetPassword(Request $request){
         try{
-            $email=$request->header('email');
-            $password=$request->input('password');
+            $email = $request->header('email');
+            $password = $request->input('password');
             User::where('email','=',$email)->update(['password'=>$password]);
             return response()->json([
                 'status' => 'success',
@@ -170,12 +169,12 @@ class UserController extends Controller
 
     function UpdateProfile(Request $request){
         try{
-            $email=$request->header('email');
+            $id=$request->header('id');
             $firstName=$request->input('firstName');
             $lastName=$request->input('lastName');
             $mobile=$request->input('mobile');
             $password=$request->input('password');
-            User::where('email','=',$email)->update([
+            User::where('id','=',$id)->update([
                 'firstName'=>$firstName,
                 'lastName'=>$lastName,
                 'mobile'=>$mobile,

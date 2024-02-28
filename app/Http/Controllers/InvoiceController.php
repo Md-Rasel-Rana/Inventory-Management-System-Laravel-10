@@ -44,22 +44,19 @@ class InvoiceController extends Controller
         ]);
 
 
-       $invoiceID=$invoice->id;
-       $products = $request->input('products');
+        $invoiceID=$invoice->id;
+        $products = $request->input('products');
        foreach ($products as $EachProduct) {
             InvoiceProduct::create([
-                'invoice_id' => $invoiceID,
-                'user_id'=> $user_id,
-                'product_id' => $EachProduct['product_id'],
-                'qty' =>  $EachProduct['qty'],
-                'sale_price'=>  $EachProduct['sale_price'],
+                'invoice_id'=>$invoiceID,
+                'user_id'=>$user_id,
+                'product_id'=>$EachProduct['product_id'],
+                'qty' => $EachProduct['qty'],
+                'sale_price'=> $EachProduct['sale_price'],
             ]);
-        }
-
+        }   
        DB::commit();
-
        return 1;
-
         }
         catch (Exception $e) {
             DB::rollBack();

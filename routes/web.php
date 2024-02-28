@@ -40,7 +40,7 @@ Route::get('/invoicePage',[InvoiceController::class,'InvoicePage'])->middleware(
 Route::get('/salePage',[InvoiceController::class,'SalePage'])->middleware([TokenVerificationMiddleware::class]);
 Route::get('/reportPage',[ReportController::class,'ReportPage'])->middleware([TokenVerificationMiddleware::class]);
 
-
+ 
 
 
 
